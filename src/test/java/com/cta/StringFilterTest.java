@@ -10,14 +10,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-class SomeClassTest {
+class StringFilterTest {
 
-    @InjectMocks private SomeClass someClass;
+    @InjectMocks private StringFilter someClass;
     @Mock private MetricManager metricManager;
 
     @Test
     void shouldFilterLargeString() {
-        String result = someClass.someMethod(List.of(), 0);
+        String result = someClass.filter(List.of(), 0);
         Assertions.assertEquals("", result);
     }
 }

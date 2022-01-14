@@ -1,22 +1,20 @@
 package com.cta;
 
 import java.util.List;
+import java.util.logging.Logger;
 
-public class SomeClass {
+public record StringFilter(MetricManager metricManager) {
 
-    private final MetricManager metricManager;
+    private static final Logger LOG = Logger.getAnonymousLogger();
 
-    public SomeClass(MetricManager metricManager) {
-        this.metricManager = metricManager;
-    }
+    public String filter(List<String> strings, int maxStringSize) {
+        LOG.info("calling filter method");
 
-    public String someMethod(List<String> strings, int maxStringSize) {
         List<String> filteredStrings = strings.stream()
             .filter(string -> string.length() <= maxStringSize)
             .toList();
 
         int filteredString = strings.size() - filteredStrings.size();
-        metricManager.record("filtered.string", filteredString);
 
         return String.join(" ", filteredStrings);
     }
