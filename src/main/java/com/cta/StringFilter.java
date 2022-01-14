@@ -14,7 +14,8 @@ public record StringFilter(MetricManager metricManager) {
             .filter(string -> string.length() <= maxStringSize)
             .toList();
 
-        int filteredString = strings.size() - filteredStrings.size();
+        int nbOfRemovedString = strings.size() - filteredStrings.size();
+        metricManager.record("filtered.string", nbOfRemovedString);
 
         return String.join(" ", filteredStrings);
     }
