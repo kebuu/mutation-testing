@@ -20,17 +20,17 @@ class StringFilterTest {
         Assertions.assertEquals("", result);
     }
 
-    @Test
-    void shouldFilterLargeString_better() {
-        String result = someClass.filter(List.of("Hello", "World"), 3);
-        Assertions.assertEquals("", result);
-    }
-
-    @Test
-    void shouldFilterLargeString_good() {
-        String result = someClass.filter(List.of("Hello", "my", "World"), 3);
-        Assertions.assertEquals("my", result);
-
-        Mockito.verify(metricManager).record("filtered.string", 2);
-    }
+//    @Test
+//    void shouldFilterLargeString_better() {
+//        String result = someClass.filter(List.of("Hello", "World"), 3);
+//        Assertions.assertEquals("", result);
+//    }
+//
+//    @Test
+//    void shouldFilterLargeString_good() {
+//        String result = someClass.filter(List.of("Hello", "my", "World"), 3);
+//        Assertions.assertEquals("my", result);
+//
+//        Mockito.verify(metricManager).record("filtered.string", 2);
+//    }
 }
