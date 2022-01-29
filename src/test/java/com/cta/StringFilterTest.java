@@ -21,12 +21,6 @@ class StringFilterTest {
     }
 
 //    @Test
-//    void shouldFilterLargeString_better() {
-//        String result = someClass.filter(List.of("Hello", "World"), 3);
-//        Assertions.assertEquals("", result);
-//    }
-//
-//    @Test
 //    void shouldFilterLargeString_good() {
 //        String result = someClass.filter(List.of("Hello", "my", "World"), 3);
 //        Assertions.assertEquals("my", result);
